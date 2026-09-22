@@ -1053,6 +1053,8 @@ button {
   
   .hero-title {
     font-size: 2.1rem;
+    text-align: center;
+    width: 100%;
   }
   
   /* Beneficios en Tablet */
@@ -1188,6 +1190,8 @@ button {
     font-size: 2rem;
     line-height: 1.18;
     margin-bottom: 12px;
+    text-align: center;
+    width: 100%;
   }
   
   .hero-subtitle {
