@@ -12,10 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_DEFAULT_MSG}`;
 
-  // Sincronizar todos los enlaces y botones de WhatsApp para asegurar apertura confiable
+  // Sincronizar enlaces y botones de WhatsApp (conservando mensajes específicos si ya están definidos)
   const whatsappButtons = document.querySelectorAll('a[href="#whatsapp"], [data-whatsapp-cta]');
   whatsappButtons.forEach(btn => {
-    btn.setAttribute('href', WHATSAPP_URL);
+    const currentHref = btn.getAttribute('href');
+    if (!currentHref || currentHref === '#whatsapp') {
+      btn.setAttribute('href', WHATSAPP_URL);
+    }
     btn.setAttribute('target', '_blank');
     btn.setAttribute('rel', 'noopener noreferrer');
   });

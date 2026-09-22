@@ -364,7 +364,32 @@ button {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.55;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+/* Bloque de Precio Hero — Elemento Visual Dominante */
+.hero-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.hero-price-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-price-value {
+  font-size: clamp(2.8rem, 4.8vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--brand-blue);
 }
 
 .hero-ctas {
@@ -663,7 +688,107 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. FICHA TÉCNICA / DETALLES CLAVE (Tarjetas Compañeras Simétricas)
+   4. SECCIÓN MEDIDAS Y PRECIOS (SIZES & PRICES)
+   -------------------------------------------------------------------------- */
+.pricing-section {
+  padding: 96px 0;
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 38px 28px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--trans-fast);
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(3, 96, 171, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card.pricing-card-featured {
+  border-color: rgba(3, 96, 171, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.pricing-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.pricing-size-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-blue);
+  background-color: var(--bg-light-blue);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--brand-blue-border);
+}
+
+.pricing-size-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.pricing-amount-block {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.pricing-amount-val {
+  font-size: clamp(2.4rem, 2.9vw, 3rem);
+  font-weight: 800;
+  color: var(--brand-blue);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  display: block;
+}
+
+.pricing-product-name {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pricing-cta-box {
+  width: 100%;
+}
+
+.pricing-cta-box .btn {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   5. FICHA TÉCNICA / DETALLES CLAVE (Tarjetas Compañeras Simétricas)
    -------------------------------------------------------------------------- */
 .specs-section {
   padding: 96px 0;
@@ -952,8 +1077,21 @@ button {
 .faq-closing-text h3 {
   font-size: 1.45rem;
   font-weight: 800;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   line-height: 1.25;
+}
+
+.closing-price-tag {
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 6px 0 10px 0;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 4px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .faq-closing-text p {
@@ -1055,6 +1193,23 @@ button {
     font-size: 2.1rem;
     text-align: center;
     width: 100%;
+  }
+  
+  .hero-price-block {
+    justify-content: center;
+  }
+  
+  /* Medidas y Precios en Tablet */
+  .pricing-grid {
+    gap: 18px;
+  }
+  
+  .pricing-card {
+    padding: 30px 20px;
+  }
+  
+  .pricing-amount-val {
+    font-size: 2.3rem;
   }
   
   /* Beneficios en Tablet */
@@ -1196,7 +1351,17 @@ button {
   
   .hero-subtitle {
     font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+  
+  /* Hero Price en Móvil */
+  .hero-price-block {
+    justify-content: center;
     margin-bottom: 20px;
+  }
+  
+  .hero-price-value {
+    font-size: 2.75rem;
   }
   
   .hero-ctas {
@@ -1281,6 +1446,27 @@ button {
   
   .benefits-cta-box .btn {
     width: 100%;
+  }
+  
+  /* Medidas y Precios en Móvil: Apiladas verticalmente */
+  .pricing-section {
+    padding: 60px 0;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .pricing-card {
+    padding: 34px 22px;
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .pricing-amount-val {
+    font-size: 2.6rem;
   }
   
   /* Ficha Técnica en Móvil */
