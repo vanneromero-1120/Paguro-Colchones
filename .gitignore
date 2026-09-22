@@ -1,0 +1,10 @@
+# Temporary & development files
+*.ps1
+*.zip
+reference_stitch/
+
+# OS / Editor specific
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
